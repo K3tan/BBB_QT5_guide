@@ -58,13 +58,38 @@ After successfully executing the configure command, you'll have Makefile in *qt-
 First run `make` or `make -j4` in case you need multi threading for faster compilation. You can ignore the warnings as they won't affect your actual installation or execution of Qt on BBB. After successful completion of `makefile`,  you need to run the command `sudo make install`. Be aware of *sudo* as it is necessary to make the directory specified in *-hostprefix* parameter in ./configure.   
 
 ##### 6. Configure Qt Creator
+- To select device as BeagleBone:
+  Go to `Tools` > `Options` > `Devices` and edit as follows:
+  
+  ![](https://imgur.com/4qWRRb3l.png)
 
+- Then go to `Tools` > `Options` > `Kits` > `Compilers` and add both C and C++ compilers as gcc-arm-gnuabihf-directory/bin/arm-gnuabihf-g++.
+  
+  ![](https://imgur.com/wONE05zl.png)
 
+- Set Qt version in Qt creator:
+  Go to `Tools` > `Options` > `Kits` > `Qt versions` > `Add` and browse the qmake /bin/ folder in Qt installation directory specified with `-prefix` parameter above in configuration step. (For example: in my case it was in *~/Qt5forBBB/bin/qmake*)
 
+- Final step - add BeagleBone as Kit in Qt Creator:
+  To combine all the settings above, go to `Tools` > `Options` > `Kits` and then click `Add`. Configure as follows:
+  ```sh
+  Name:                 BeagleBone (or as you wish.)
+  Device type:          Generic Linux Device
+  Device:               BBB (As configured above in step 6.1)
+  Compiler C & C++:     As configured in step 6.2
+  Debugger:             Use gdb-multiarch
+  Qt version:           Same one from step 6.3
+  ``` 
+  Then click `Apply` and `Ok`.
 
+##### 7. Project creation
+When you create a new project, select your BeagleBone Kit as target, so that Qt Creator can remotely deploy and debug the running code from your workstation.
 
+--------
 
+I hope that you've got a much better idea at cross compiling Qt5 for BeagleBone Black. The only purpose of this writeup is to help absolute beginners to Qt like myself to get a headstart rather than wandering and searching for hours on internet before finding some solutions. Feel free to suggest changes in this article if I've made some mistake or I've given some wrong instruction. 
 
+--------
 ### Sources:
 - [BeagleBone Black beginner's guide to cross compiling Qt](https://wiki.qt.io/BeagleBone_Black_Beginners_Guide) - Quite old now but still only comprehensive guide mentioning all the steps in deep.
 - [Yongli-aus' guide for Qt4.8.6](https://github.com/yongli-aus/qt-4.8.6-cross-compile-for-beaglebone-black) - The outline of steps is perfect even though Qt version update Qt4 -> Qt5 has changed a lot of commands and configuration.
