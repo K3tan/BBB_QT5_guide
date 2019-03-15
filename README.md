@@ -2,7 +2,7 @@
 This is a step by step guide for cross compiling Qt5.x on BeagleBone Black. The reason I made this guide is because the resources for cross compiling Qt5.x for BeagleBone Black platform are there but you've to dig deep into forums and do your research for a long time than actually compiling it. So, don't take this as *the only guide out there*, but something that can give you a headstart and a basic idea to start cross compilation.
 
 ### Prerequisites:
-- A BeagleBone Black (obviously.)
+- A BeagleBone Black (obviously) - I'm using latest debian 9.5. 
 - Latest source code for Qt-everywhere from [official Qt archive](https://download.qt.io/archive/qt/) (For example: I'm going to use 5.12.1 throughout this guide which I got from [here](https://download.qt.io/archive/qt/5.12/5.12.1/single/))
 - Latest Toolchain and Sysroot for gnu-armeabihf architecture (I got mine from [Linaro](https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabihf/)) 
 `WARNING: Make sure you use sysroot and toolchain from same source and they're of same version. If you want to genearate sysroot from your BBB board, the procedure is given in the official BBB beginner's guide (See sources at the end).`
