@@ -1,4 +1,4 @@
-# BBB_QT5_guide
+## Guide to cross compile Qt 5.x for BeagleBone Black 
 This is a step by step guide for cross compiling Qt5.x on BeagleBone Black. The reason I made this guide is because the resources for cross compiling Qt5.x for BeagleBone Black platform are there but you've to dig deep into forums and do your research for a long time than actually compiling it. So, don't take this as *the only guide out there*, but something that can give you a headstart and a basic idea to start cross compilation.
 
 ### Prerequisites:
