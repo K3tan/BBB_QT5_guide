@@ -11,8 +11,8 @@ This is a step by step guide for cross compiling Qt5.x on BeagleBone Black. The 
 ### Procedure:
 ##### 1. Extract the downloaded Qt source file in your desired directory
 ```sh
-unxz qt-everywhere-src-5.12.1.tar.xz
-tar -xvf qt-everywhere-src-5.12.1.tar
+unxz qt-everywhere-src-5.xx.x.tar.xz
+tar -xvf qt-everywhere-src-5.xx.x.tar
 ```
 
 ##### 2. Extract and copy toolchain alongwith sysroot to desired directory
